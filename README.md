@@ -8,22 +8,22 @@
 
 1. Run the docker container with mosquitto
     ```sh
-    docker run -it --name mosquitto -p 1883:1883 eclipse-mosquitto
+    docker run -d --name mosquitto -p 1883:1883 eclipse-mosquitto
     ```
-1. Edit the config file
-   1. Open a shell in the container
+2. Edit the config file
+    1. Open a shell in the container
         ```sh
         docker exec -it mosquitto /bin/sh
         ```
-   2. Install nano
+    2. Install nano
         ```sh
         apk update && apk add nano
         ```
-   3. Open the config file
+    3. Open the config file
         ```sh
         nano /mosquitto/config/mosquitto.conf
         ```
-   4. Add following code into the config file
+    4. Add following code into the config file
         ```
         allow_anonymous true
         listener 1883 0.0.0.0
